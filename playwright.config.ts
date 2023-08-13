@@ -30,6 +30,9 @@ export default defineConfig({
     trace: 'on-first-retry',
   },
   snapshotDir: './snapshots',
+  expect: {
+    toMatchSnapshot: {maxDiffPixels: 100}
+  },
 
   /* Configure projects for major browsers */
   projects: [

@@ -7,9 +7,9 @@ export class LoginPage {
     private login: Locator
 
     constructor(page: Page) {
-        this.uName = page.getByPlaceholder('Username')
-        this.pwd = page.getByPlaceholder('Password')
-        this.login = page.getByRole('button', { name: 'Login' })
+        this.uName = page.locator("[name='username']")
+        this.pwd = page.locator("[name='password']")
+        this.login = page.locator("[type='submit']")
     }
 
     async setCredentials(userName: string, password: string) {
