@@ -12,7 +12,7 @@ test.describe('Login page', async () => {
         await expect(page).toHaveScreenshot('Dahsboard.png')
     })
 
-    test.only('Invalid login credentials', async ({ page, loginPage }) => {
+    test('Invalid login credentials', async ({ page, loginPage }) => {
         await page.goto('/web/index.php/auth/login')
         await loginPage.setCredentials("abc", "123")
         await loginPage.clickLogin()
