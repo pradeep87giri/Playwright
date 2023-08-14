@@ -11,4 +11,11 @@ test.describe('Login page', async () => {
         await dashboardPage.waitForPage()
         await expect(page).toHaveScreenshot('Dahsboard.png')
     })
+
+    test.only('Invalid login credentials', async ({ page, loginPage }) => {
+        await page.goto('/web/index.php/auth/login')
+        await loginPage.setCredentials("abc", "123")
+        await loginPage.clickLogin()
+        await loginPage.verifyAlertMsg('Invalid credentials')
+    })
 })
