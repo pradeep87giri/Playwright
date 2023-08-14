@@ -9,7 +9,8 @@ test.describe('Login page', async () => {
         await loginPage.setCredentials(data.userName, data.password)
         await loginPage.clickLogin()
         await dashboardPage.waitForPage()
-        await expect(page).toHaveScreenshot('Dahsboard.png')
+        await dashboardPage.goToMyInfo()
+        await expect(page).toHaveScreenshot('My_Info.png', {fullPage: true})
     })
 
     test('Invalid login credentials', async ({ page, loginPage }) => {
