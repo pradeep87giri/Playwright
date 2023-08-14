@@ -31,7 +31,7 @@ export default defineConfig({
   },
   snapshotDir: './snapshots',
   expect: {
-    toMatchSnapshot: {maxDiffPixels: 100}
+    toHaveScreenshot: {maxDiffPixels: 100}
   },
 
   /* Configure projects for major browsers */
